@@ -3,18 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* THE NAVBAR*/
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
   background-color: #f8f9fa;
+  padding: 40px;
+  border-bottom: 0.5px solid #ced4da;
+  cursor: pointer;
 }
 .logo h4 {
   font-family: "Dancing Script", cursive;
+  font-weight: bolder;
   color: #cc5803;
   letter-spacing: 2px;
-  font-size: 40px;
+  font-size: 50px;
 }
 .nav-links {
   display: flex;
@@ -29,7 +34,7 @@ nav {
   color: #000000;
   text-decoration: none;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
 }
 .burger {
   display: none;
@@ -95,4 +100,33 @@ nav {
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+/*THE HEADER*/
+.the-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.the-header-h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.header-span {
+  font-family: "Pacifico", cursive;
+  font-weight: 90;
+  font-size: 35px;
+  color: #cc5803;
+}
+.break-for-mobile {
+  display: none;
+}
+/* MOBILE FOR HEADER*/
+@media screen and (max-width: 768px) {
+  .the-header {
+    text-align: center;
+  }
+  .break-for-mobile {
+    display: block;
+  }
 }
