@@ -44,26 +44,102 @@
       </h2>
     </header>
     <section class="main-section">
-      <div class="main-section-div">
-        <div class="healthy">
-          <img src="assets/healthy.jpeg" alt="vegetables" />
-        </div>
-        <div class="Nutritious">
-          <img
-            src="assets/Nutritious.jpeg"
-            alt="nutritious food"
-            height="170px"
-            width="250px"
-          />
-        </div>
-        <div class="Delicious">
-          <img src="assets/delicious.jpeg" alt="pizza" />
-        </div>
-        <div class="Easy">
-          <img src="assets/easy.jpg" alt="nachos and cheese" width="300px" />
+      <div class="container">
+        <div class="images">
+          <div class="fast">
+            <img src="assets/fast.jpg" alt="an image of vegetables" />
+            <button class="show-msg-btn" data-msg="fast-btn">Fast</button>
+          </div>
+          <div class="tasty">
+            <img src="assets/tasty.jpg" alt="an image of vegetables" />
+            <button class="show-msg-btn" data-msg="tasty-btn">Tasty</button>
+          </div>
+          <div class="healthy">
+            <img src="assets/healthy.jpg" alt="grilled salmon and vegetables" />
+            <button class="show-msg-btn" data-msg="healthy-btn">Healthy</button>
+          </div>
+          <div class="easy">
+            <img src="assets/Easy.jpg" alt="an image of vegetables" />
+            <button class="show-msg-btn" data-msg="easy-btn">Easy</button>
+          </div>
+          <div class="message hidden" id="easy-btn">
+            <button class="close-msg">&times;</button>
+            <p>
+              "Unlock the joy of cooking with our collection of easy and
+              effortless recipes! Discover the art of simplicity in the kitchen
+              as we guide you through quick and hassle-free culinary creations.
+              From mouthwatering mains to delectable desserts, our recipes are
+              thoughtfully designed to make your cooking experience a breeze.
+              Say goodbye to complexity and hello to the sheer pleasure of
+              creating delicious dishes with ease. Get ready to impress your
+              taste buds and effortlessly conquer the kitchen like a pro!"
+            </p>
+          </div>
+          <div class="message hidden" id="tasty-btn">
+            <button class="close-msg">&times;</button>
+            <p>
+              "From savory sensations to sweet sensations, each dish is crafted
+              with a harmonious blend of ingredients that will leave your taste
+              buds dancing with delight. Elevate your dining experience with our
+              collection of mouthwatering recipes that are guaranteed to satisfy
+              even the most discerning palates. Prepare to embark on a flavor
+              adventure like no other and discover the true joy of delicious
+              dining!"
+            </p>
+          </div>
+          <div class="message hidden" id="fast-btn">
+            <button class="close-msg">&times;</button>
+            <p>
+              "Experience the thrill of quick and effortless cooking with our
+              fast recipes! Savor the flavors of mouthwatering dishes without
+              sacrificing precious time. From speedy stir-fries to swift salads,
+              our collection of recipes will have you enjoying delicious meals
+              in a flash. Say goodbye to long hours in the kitchen and hello to
+              more time for the things you love. Get ready to unleash your inner
+              culinary wizard with our fast and fabulous recipes!"
+            </p>
+          </div>
+          <div class="message hidden" id="healthy-btn">
+            <button class="close-msg">&times;</button>
+            <p>
+              "Discover the art of nourishing your body and delighting your
+              taste buds with our collection of wholesome and healthy recipes!
+              From vibrant salads to hearty meals, every bite is a celebration
+              of nourishment and vitality. Say goodbye to guilt and hello to the
+              joy of nourishing your body with delectable dishes. Experience the
+              power of healthy eating and embark on a delicious journey towards
+              a happier, healthier you!"
+            </p>
+          </div>
+          <div class="overlay hidden"></div>
         </div>
       </div>
+      <div class="small-section">
+        <div class="photo-circle">
+          <img src="assets/photo2.jpeg" alt="BBQ" />
+        </div>
+        <div class="photo-circle">
+          <img src="assets/photo1.jpeg" alt="pizza" />
+        </div>
+        <div class="photo-circle">
+          <img src="assets/photo3.jpeg" alt="ribs" />
+        </div>
+        <div class="photo-circle">
+          <img src="assets/4.jpeg" alt="a fruit salad" />
+        </div>
+        <div class="photo-circle">
+          <img src="assets/5.jpeg" alt="a salad" />
+        </div>
+        <div class="photo-circle"><img src="assets/9.jpeg" alt="fruits" /></div>
+        <div class="photo-circle">
+          <img src="assets/6.jpeg" alt="beef dish" />
+        </div>
+        <div class="photo-circle">
+          <img src="assets/7.jpeg" alt="burgers" />
+        </div>
+        <div class="photo-circle"><img src="assets/8.jpeg" alt="salad" /></div>
+      </div>
     </section>
-    <script src="constants.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
