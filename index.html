@@ -14,37 +14,104 @@
     />
   </head>
   <body>
-    <nav class="logo">
+    <nav class="nav-bar">
       <h4>RecipeGenie</h4>
       <ul class="nav-links">
         <li><a href="#">HOME</a></li>
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">RECIPES</a></li>
-        <li><a href="#">START HERE</a></li>
         <li>
-          <a href="#"
-            ><img
+          <img
+              class="search-icon"
               src="assets/magnifying-glass.png"
               alt=" search icon"
               height="20px"
               width="20px"
-          /></a>
+          />
         </li>
       </ul>
+      <div class="search-container"></div>
       <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
     </nav>
+   
     <header class="the-header">
       <h2 class="the-header-h2">
         Magical Recipes Tailored for...<br class="break-for-mobile" />
         <span class="header-span">Genuine, Authentic, Everyday Life.</span>
       </h2>
     </header>
+     <!--for the search box-->
+    <section class="section2">
+    <div class="search-box hidden">
+     
+      <button class="close-search">&times;</button>
+    
+      <form>
+            <input type="text" placeholder="Search Recipe..." name="q">
+            <button class="search-btn" type ="submit"><img class="search-icon2" src="assets/search-interface-symbol (1).png" alt="search icon"></button>
+      </form>
+        <!--- <form>
+            <input type="text" placeholder="Search Recipe...">
+           <ion-icon name="search-outline"></ion-icon>
+          </form> -->
+          <div class="search-result">   
+      <!--<div class ="search-item">
+       <img src="assets/easy.jpg" alt="just a placeholder for now"> 
+       <div class="flex-container">
+       <h1 class="title">This a recipe</h1>
+       <a href="#" class="view-button">View Recipe</a>
+       </div>
+        <p class ="item-data">Cuisine:</p>
+          <p class="item-data">Ingredients:</p>
+       <p class="item-data">Time:</p>
+       <p class="item-data">Calories:120</p>
+      </div>
+      </div>-->
+    </div>
+    </section>
+    <!--End of the search box-->
     <section class="main-section">
-      <div class="container">
+      <div class="recipe-container">
+        <article class="home-page-recipes">
+
+        <!--<p>
+              "Discover the art of nourishing your body and delighting your
+              taste buds with our collection of wholesome and healthy recipes!
+              From vibrant salads to hearty meals, every bite is a celebration
+              of nourishment and vitality. Say goodbye to guilt and hello to the
+              joy of nourishing your body with delectable dishes. Experience the
+              power of healthy eating and embark on a delicious journey towards
+              a happier, healthier you!"
+            </p>
+            <article class="recipe">
+          <img class="recipe_img" src="" />
+          <div class="recipe_data">
+            <h3 class="recipe_name">COUNTRY</h3>
+            <h4 class="recipe_calories">REGION</h4>
+            <p class="recipe duration_row"><span>👫</span>POP people</p>
+            <p class="recipe cuisine__row"><span>🗣️</span>LANG</p>
+            <p class="recipe_dish type"><span>💰</span>CUR</p>
+          </div>
+        </article>
+        <!--
+        <article class="recipe">
+          <img class="recipe_img" src="" />
+          <div class="recipe_data">
+            <h3 class="recipe_name">COUNTRY</h3>
+            <h4 class="recipe_calories">REGION</h4>
+            <p class="recipe duration_row"><span>👫</span>POP people</p>
+            <p class="recipe cuisine__row"><span>🗣️</span>LANG</p>
+            <p class="recipe_dish type"><span>💰</span>CUR</p>
+          </div>
+        </article>
+        -->
+     <!--- </article> -->
+        
+        <!--
         <div class="images">
           <div class="fast">
             <img src="assets/fast.jpg" alt="an image of vegetables" />
@@ -62,6 +129,7 @@
             <img src="assets/Easy.jpg" alt="an image of vegetables" />
             <button class="show-msg-btn" data-msg="easy-btn">Easy</button>
           </div>
+          -->
           <div class="message hidden" id="easy-btn">
             <button class="close-msg">&times;</button>
             <p>
@@ -114,6 +182,7 @@
           <div class="overlay hidden"></div>
         </div>
       </div>
+      <!--X
       <div class="small-section">
         <div class="photo-circle">
           <img src="assets/photo2.jpeg" alt="BBQ" />
@@ -139,7 +208,10 @@
         </div>
         <div class="photo-circle"><img src="assets/8.jpeg" alt="salad" /></div>
       </div>
+    -->
     </section>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
