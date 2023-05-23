@@ -3,40 +3,150 @@
   padding: 0;
   box-sizing: border-box;
 }
+body,
+html {
+  min-height: 100%;
+  background: #ecf4fb;
+  position: relative;
+}
+/*THE HEADER*/
+.header-container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgb(0, 0, 0, 0.3), transparent),
+    url(assets/header-image.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  object-fit: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 0 8%;
+  position: relative;
+}
+/* THE SMALL HEADER*/
+.bottom-container {
+  min-height: 50vh;
+  width: 90%;
+  background-color: #f8f9fa;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 8px;
+  padding-top: 50px;
+}
+.bottom-container p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.little-line {
+  width: 20px;
+  height: 10px;
+  border-bottom: 0.5px solid black;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+/*img gallery*/
+.img-gallery {
+  width: 80%;
+  margin: 15px auto 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+.img-gallery img {
+  width: 100%;
+  cursor: pointer;
+}
+.img-gallery img:hover {
+  transform: scale(0.8) rotate(-15deg);
+  border-radius: 20px;
+  box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+}
 
 /* THE NAVBAR*/
 nav {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  background-color: #f8f9fa;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 5px 0;
   padding: 40px;
-  border-bottom: 0.5px solid #ced4da;
+  text-align: justify;
   cursor: pointer;
 }
-.nav-bar h4 {
+nav h4 {
   font-family: "Dancing Script", cursive;
   font-weight: bolder;
-  color: #cc5803;
+  color: #fff;
   letter-spacing: 2px;
-  font-size: 50px;
+  font-size: 35px;
+  cursor: pointer;
 }
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  width: 30%;
-  font-family: "Roboto", sans-serif;
+nav ul {
+  flex: 1;
+  text-align: right;
+  padding: 30px;
 }
-.nav-links li {
+nav ul li {
+  display: inline-block;
   list-style: none;
+  margin: 10px 30px;
 }
-.nav-links a {
-  color: #000000;
+nav ul li a {
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 17px;
+  position: relative;
 }
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  transition: width 0.3s;
+}
+nav ul li a:hover::after {
+  width: 50%;
+}
+.search-icon-container {
+  width: 45px;
+  border-radius: 250px 0px 0px 0px;
+  background-color: #fff;
+}
+.text-box {
+  color: #fff;
+  position: absolute;
+  bottom: 8%;
+}
+.text-box p {
+  font-size: 50px;
+  font-weight: 600;
+}
+.text-box h1 {
+  font-size: 100px;
+  line-height: 160px;
+  margin-left: -10px;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  background: url(assets/back.png);
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: back 20s linear infinite;
+}
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+.text-box h3 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
 .burger {
   display: none;
   cursor: pointer;
@@ -58,15 +168,38 @@ nav {
 
 /*Nav Mobile View*/
 @media screen and (max-width: 768px) {
+  .header-container {
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.3), transparent),
+      url(assets/header-image.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    object-fit: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 0 8%;
+    position: relative;
+  }
   body {
     overflow-x: hidden;
+  }
+  .text-box h3 {
+    font-size: 20px;
+    font-weight: 500;
   }
   nav {
     display: flex;
     justify-content: space-between;
     align-items: normal;
     min-height: 8vh;
-    background-color: #f8f9fa;
+
+    width: 100%;
+
+    color: #fff;
+    padding: 100px 0 30px;
+    border-bottom-left-radius: 125px;
+    font-size: 13px;
     padding: 12px;
     border-bottom: 0.5px solid #ced4da;
     cursor: pointer;
@@ -74,7 +207,7 @@ nav {
   .nav-bar h4 {
     font-family: "Dancing Script", cursive;
     font-weight: bolder;
-    color: #cc5803;
+    color: #fff;
     letter-spacing: 1.5px;
     font-size: 25px;
   }
@@ -83,7 +216,6 @@ nav {
     right: 0px;
     height: 92vh;
     top: 8vh;
-    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,11 +223,24 @@ nav {
     transform: translate(100%);
     transition: 0.5s ease-in;
   }
-  .nav-links li {
+  .col {
+    flex-basis: 25%;
+    padding: 10px;
+  }
+  .col ul li {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  .col:nth-child(2),
+  .col:nth-child(3) {
+    flex-basis: 15%;
+  }
+  */ .nav-links li {
     opacity: 0;
   }
   .burger {
     display: block;
+    cursor: pointer;
   }
 }
 .nav-active {
@@ -121,22 +266,6 @@ nav {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 /*THE HEADER*/
-.the-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.the-header-h2 {
-  font-family: "Roboto Slab", serif;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-align: center;
-}
-.header-span {
-  font-family: "Pacifico", cursive;
-  font-weight: 90;
-  font-size: 35px;
-  color: #cc5803;
-}
 .break-for-mobile {
   display: none;
 }
@@ -188,47 +317,7 @@ nav {
   padding-top: 20px;
   height: 100%;
 }
-/*
-.container {
-  max-width: 1224px;
-  width: 90%;
-  margin: auto;
-  padding: 40px;
-}
 
-.images {
-  display: flex;
-  gap: 20px;
-}
-.images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.recipe_img {
-  width: 30rem;
-  height: 17rem;
-  object-fit: cover;
-  background-color: #eee;
-  border-top-left-radius: 0.7rem;
-  border-top-right-radius: 0.7rem;
-}
-
-.recipe_data {
-  padding: 2.5rem 3.75rem 3rem 3.75rem;
-}
-
-.recipe_name {
-  font-size: 2.7rem;
-  margin-bottom: 0.7rem;
-}
-
-.recipe_cuisine {
-  font-size: 1.4rem;
-  margin-bottom: 2.5rem;
-  text-transform: uppercase;
-  color: #888;
-}*/
 .show-msg-btn {
   background-color: #fca311;
   color: #f8f9fa;
@@ -255,17 +344,7 @@ nav {
   border: none;
   background: none;
 }
-.message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  background-color: #f8f9fa;
-  padding: 6rem;
-  border-radius: 5px;
-  z-index: 10;
-}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -284,18 +363,6 @@ nav {
   .images {
     flex-direction: column;
   }
-
-  .message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    background-color: #f8f9fa;
-    padding: 6rem;
-    border-radius: 5px;
-    z-index: 10;
-  }
 }
 /* SEARCH BOX */
 .section2 {
@@ -309,7 +376,7 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
 }
-form {
+.search-form {
   width: 100%;
   max-width: 1000px;
   margin: 10px auto;
@@ -321,7 +388,7 @@ form {
   padding: 1px;
 }
 
-form input {
+.search-form input {
   background: transparent;
   margin-left: 20px;
   border: 0;
@@ -361,15 +428,56 @@ form input {
   width: 100%;
   display: grid;
   grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 9px;
+  padding: 3rem;
 }
 .search-item {
   width: 100%;
   padding: 10px;
+  overflow: hidden;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.search-item:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 .search-item img {
   width: 100%;
   height: 300px;
+}
+.search-item h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+.view-recipe-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #3363ff;
+  background-color: #d8e0fd;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.view-recipe-btn span {
+  margin-left: 1rem;
+  transition: 0.2s;
+}
+.view-recipe-btn:hover {
+  background-color: #c2cffc;
+}
+.view-recipe-btn:hover span {
+  margin-left: 1.8rem;
+}
+.view-recipe-btn a {
+  text-decoration: none;
 }
 .search-item .flex-container {
   display: flex;
@@ -390,19 +498,94 @@ form input {
   height: 100px;
   border-radius: 50%;
 }
-/*FOR THE HOME PAGE*/
-/*
-.home-page-recipes {
-  display: flex;
-  font-size: 2rem;
-  opacity: 0;
-  transition: opacity 1s;
+
+/*FOOTER*/
+footer {
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(to right, #00093c, #2d0b00);
+  color: #fff;
+  padding: 100px 0 30px;
+  border-top-left-radius: 125px;
+  font-size: 13px;
+  line-height: 20px;
 }
-.recipe {
-  background-color: #fff;
-  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
-  font-size: 1.8rem;
-  width: 30rem;
-  border-radius: 0.7rem;
-  margin: 0 3rem;
-}*/
+.row {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+.col h3 {
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+.email-id {
+  width: fit-content;
+  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
+}
+.col {
+  flex-basis: 25%;
+  padding: 10px;
+}
+.col ul li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+.col:nth-child(2),
+.col:nth-child(3) {
+  flex-basis: 15%;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+footer-form {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+.social-media-icons {
+  display: flex;
+  gap: 15px;
+  width: 10%;
+  margin-top: 30px;
+  line-height: 40px;
+  cursor: pointer;
+}
+hr {
+  width: 90%;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  margin: 20px auto;
+}
+.copyright {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  footer {
+    bottom: unset;
+  }
+  .col {
+    flex-basis: 100%;
+  }
+  .col:nth-child(2),
+  .col:nth-child(3) {
+    flex-basis: 100%;
+  }
+}
