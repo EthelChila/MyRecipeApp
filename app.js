@@ -65,7 +65,6 @@ const theSearchIcon = document.querySelector(".search-icon");
 const theSearchBox = document.querySelector(".search-box");
 const closeSearchBtn = document.querySelector(".close-search");
 const divToBeHidden = document.querySelector(".to-be-hidden");
-const mainSection = document.querySelector(".main-section");
 const header = document.querySelector(".header-container");
 theSearchIcon.addEventListener("click", () => {
   theSearchIcon.classList.add("hidden");
@@ -109,6 +108,7 @@ const fetchAPI = async (searchResult) => {
     return data;
   } catch (error) {
     console.log("An error occurred:", error.message);
+    searchResultDiv.innerHTML = `<p class="error-message">An error occurred: ${error.message}</p>`;
   }
 };
 
